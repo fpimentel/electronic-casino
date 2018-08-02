@@ -1,5 +1,5 @@
 package com.tradewind.domain.dto;
 
-public class IDealer {
-
+public interface IDealer {
+	 String getDealerId();
 }

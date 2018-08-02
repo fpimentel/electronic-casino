@@ -5,6 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+import com.tradewind.domain.dto.EstablishGameRequest;
+
 /**
  * @author fpimentelc
  * @version 1.0
@@ -20,8 +22,8 @@ public class EstablishAGamePublisher {
 	@Value("${electronic_casino_exchange.establish_new_game_routing_key.name}")
 	private String establishNewGameRoutingKey;
 	
-	public void sentStablishANewGameMessage(String establishANewGameMessage){
-		System.out.println("ROunting key for stablis a new game " + establishNewGameRoutingKey);
-		amqpTemplate.convertAndSend(exchange, establishNewGameRoutingKey,establishANewGameMessage);
+	public void sentStablishANewGameMessage(EstablishGameRequest establishGameRequest){
+		System.out.println("Rounting key for stablis a new game " + establishNewGameRoutingKey);
+		amqpTemplate.convertAndSend(exchange, establishNewGameRoutingKey,establishGameRequest);
 	}
 }

@@ -3,6 +3,8 @@ package com.tradewind.subcriber;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import com.tradewind.domain.dto.EstablishGameRequest;
 import com.tradewind.service.IElectronicCasinoService;
 
 /**
@@ -17,7 +19,7 @@ public class EstablishAGameSubcriber {
 	private IElectronicCasinoService electronicCasinoService;
 	
 	@RabbitListener(queues="${establish_new_game_queue.name}")
-    public void recievedMessage(String establishNewGameMessage) {
-		electronicCasinoService.establishNewGame();
+    public void recievedMessage(EstablishGameRequest establishGameRequest) {
+		electronicCasinoService.establishNewGame(establishGameRequest);
     }
 }

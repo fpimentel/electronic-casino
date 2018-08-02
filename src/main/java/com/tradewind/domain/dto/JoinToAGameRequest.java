@@ -23,4 +23,10 @@ public class JoinToAGameRequest {
 	public void setGameType(GameType gameType) {
 		this.gameType = gameType;
 	}
+	@Override
+	public String toString() {
+		return "JoinToAGameRequest [player=" + player + ", gameType=" + gameType + "]";
+	}
+	
+	
 }

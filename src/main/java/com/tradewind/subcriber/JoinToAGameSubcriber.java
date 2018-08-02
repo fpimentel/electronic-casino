@@ -1,5 +1,7 @@
 package com.tradewind.subcriber;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -17,11 +19,13 @@ public class JoinToAGameSubcriber {
 	
 	@Autowired
 	private DealerService dealerService;
-	
+	private final Logger log = LoggerFactory.getLogger(JoinToAGameSubcriber.class);
 	@RabbitListener(queues="${join_new_player.queue.name}")
     public void recievedMessage(JoinToAGameRequest joinToAGameRequest) {
 		if(dealerService.hasSufficientAmount(joinToAGameRequest)) {
 			dealerService.joinToAStablishedGame(joinToAGameRequest);
+		}else {
+			log.warn("The player does not have sufficient funds. Player information is: {}" , joinToAGameRequest);
 		}
     }
 }

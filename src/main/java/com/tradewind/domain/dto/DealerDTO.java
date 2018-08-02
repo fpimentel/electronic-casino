@@ -6,7 +6,8 @@ import com.tradewind.domain.constant.Status;
  * @author fpimentelc
  * Data transfer object for Dealer entity.
  */
-public class DealerDTO extends IDealer {
+public class DealerDTO implements IDealer {
+	private String dealerId;
 	private IGame game;
 	private Status status;
 	
@@ -29,5 +30,14 @@ public class DealerDTO extends IDealer {
 
 	public void setStatus(Status status) {
 		this.status = status;
+	}
+
+	public void setDealerId(String dealerId) {
+		this.dealerId = dealerId;
+	}
+
+	@Override
+	public String getDealerId() {
+		return this.dealerId;
 	}
 }

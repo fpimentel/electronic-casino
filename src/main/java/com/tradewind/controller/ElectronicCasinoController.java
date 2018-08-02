@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import com.tradewind.domain.constant.EventType;
+import com.tradewind.domain.dto.EstablishGameRequest;
 import com.tradewind.domain.dto.JoinToAGameRequest;
 import com.tradewind.publisher.EstablishAGamePublisher;
 import com.tradewind.publisher.JoinToAGamePublisher;
@@ -25,12 +26,12 @@ public class ElectronicCasinoController {
 	@PostMapping("/joinToAGame")
 	public String joinToAGame(@RequestBody JoinToAGameRequest joinToAGameRequest){
 		joinToAGamePublisher.sentJoinToAGameMessage(joinToAGameRequest);
-		return "";
+		return "Your request was sent succefully";
 	}
 	
 	@PostMapping("/establishANewGame")
-	public String establishNewGame(){
-		establishAGamePublisher.sentStablishANewGameMessage(EventType.ESTABLISH_NEW_GAME.toString());
+	public String establishNewGame(@RequestBody EstablishGameRequest establishGameRequest){
+		establishAGamePublisher.sentStablishANewGameMessage(establishGameRequest);
 		return "Your request was sent successfully.";
 	}
 

@@ -1,5 +1,6 @@
 package com.tradewind.domain.dto;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -10,7 +11,7 @@ import com.tradewind.domain.constant.GameType;
 public class RPSGameDTO implements IGame{
 	private UUID gameId;
 	private int entryFeed;
-	private List<IPlayer> players;
+	private List<IPlayer> players = new ArrayList<>();
 	private GameStatus gameStatus;
 	private GameType gameType = GameType.RPSGAME;
 	private int numberOfPlayerToPlay;
@@ -49,8 +50,17 @@ public class RPSGameDTO implements IGame{
 	public int getNumbersOfPlayerToPlay() {
 		return numberOfPlayerToPlay;
 	}
+	public int getNumberOfPlayerToPlay() {
+		return numberOfPlayerToPlay;
+	}
+	public void setNumberOfPlayerToPlay(int numberOfPlayerToPlay) {
+		this.numberOfPlayerToPlay = numberOfPlayerToPlay;
+	}
 	@Override
 	public int getFeed() {
 		return this.entryFeed;
+	}
+	public void setEntryFeed(int entryFeed) {
+		this.entryFeed = entryFeed;
 	}
 }

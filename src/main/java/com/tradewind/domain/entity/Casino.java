@@ -22,6 +22,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "CASINO")
 public class Casino {
+	
 	@Id
 	private String casinoId;
 	

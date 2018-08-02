@@ -13,18 +13,18 @@ import com.tradewind.service.IElectronicCasinoService;
  * @version 1.0
  * Class that is observing the incoming message from SentGameResultToCasinoPublisher
  */
-@Component
-public class SentGameResultToCasinoSubcriber {
-	
-	@Autowired
-	private IElectronicCasinoService electronicCasinoService;
-	@Autowired
-	private DealerService dealerService;
-	
-	@RabbitListener(queues="${join_new_player.queue.name}")
-    public void recievedMessage(JoinToAGameRequest joinToAGameRequest) {
-		if(dealerService.hasSufficientAmount(joinToAGameRequest)) {
-			dealerService.joinToAStablishedGame(joinToAGameRequest);
-		}
-    }
-}
+//@Component
+//public class SentGameResultToCasinoSubcriber {
+//	
+//	@Autowired
+//	private IElectronicCasinoService electronicCasinoService;
+//	@Autowired
+//	private DealerService dealerService;
+//	
+//	@RabbitListener(queues="${join_new_player.queue.name}")
+//    public void recievedMessage(JoinToAGameRequest joinToAGameRequest) {
+//		if(dealerService.hasSufficientAmount(joinToAGameRequest)) {
+//			dealerService.joinToAStablishedGame(joinToAGameRequest);
+//		}
+//    }
+//}

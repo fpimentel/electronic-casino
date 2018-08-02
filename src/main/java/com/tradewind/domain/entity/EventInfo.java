@@ -11,6 +11,7 @@ import javax.persistence.Table;
 import org.springframework.data.annotation.CreatedDate;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.tradewind.domain.constant.EventType;
+import com.tradewind.domain.constant.GameType;
 
 import javax.persistence.Column;
 /**
@@ -33,6 +34,10 @@ public class EventInfo {
 	@Column(nullable = true)
 	private EventType eventType;
 	
+	@Enumerated(STRING)
+	@Column(nullable = true)
+	private GameType gameType;
+	
     @CreatedDate
     @Column(name = "CREATED_DATE", nullable = false)
     @JsonIgnore
@@ -42,6 +47,14 @@ public class EventInfo {
 	public EventInfo() {
 		super();
 		this.eventId = UUID.randomUUID().toString();
+	}
+
+	public GameType getGameType() {
+		return gameType;
+	}
+
+	public void setGameType(GameType gameType) {
+		this.gameType = gameType;
 	}
 
 	public String getEventId() {

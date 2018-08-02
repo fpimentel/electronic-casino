@@ -1,12 +1,19 @@
 package com.tradewind.domain.entity;
 
+import static javax.persistence.EnumType.STRING;
+
 import java.util.UUID;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Enumerated;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
+
+import com.tradewind.domain.constant.EventType;
+import com.tradewind.domain.constant.Status;
 
 /**
  * @author fpimentelc
@@ -22,6 +29,10 @@ public class Dealer {
 	@ManyToOne
 	@PrimaryKeyJoinColumn
 	private Casino casino;
+	
+	@Enumerated(STRING)
+	@Column(nullable = true)
+	private Status dealerStatus;
 	
 	public Dealer() {
 		super();

@@ -1,14 +1,15 @@
 package com.tradewind.domain.dto;
 
+import com.tradewind.domain.constant.GameType;
+
 public class CasinoPlayerDTO implements IPlayer{
 	private PlayerInfoDTO playeInfoDto;
-	private IGame gameToPlay;
+	private GameType gameToPlay;
 	
 	public CasinoPlayerDTO() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
-	public CasinoPlayerDTO(PlayerInfoDTO playeInfoDto, IGame gameToPlay) {
+	public CasinoPlayerDTO(PlayerInfoDTO playeInfoDto, GameType gameToPlay) {
 		super();
 		this.playeInfoDto = playeInfoDto;
 		this.gameToPlay = gameToPlay;
@@ -19,10 +20,23 @@ public class CasinoPlayerDTO implements IPlayer{
 	public void setPlayeInfoDto(PlayerInfoDTO playeInfoDto) {
 		this.playeInfoDto = playeInfoDto;
 	}
-	public IGame getGameToPlay() {
+	public GameType getGameToPlay() {
 		return gameToPlay;
 	}
-	public void setGameToPlay(IGame gameToPlay) {
+	public void setGameToPlay(GameType gameToPlay) {
 		this.gameToPlay = gameToPlay;
+	}
+	@Override
+	public int getAccontBalance() {
+		return playeInfoDto.getAccountBalance();
+	}
+	@Override
+	public void setAccountBalance(int accountBalance) {
+		playeInfoDto.setAccountBalance(accountBalance);
+	}
+	@Override
+	public String toString() {
+		return "CasinoPlayerDTO [playeInfoDto=" + playeInfoDto + ", gameToPlay=" + gameToPlay + ", accountBalance="
+				+ "]";
 	}
 }
