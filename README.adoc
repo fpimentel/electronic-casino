@@ -1,0 +1,51 @@
+== tradewind challenge - Electronic CASINO
+
+This guide walks you through the process of setting up all the necessary components to run the app in your computer.
+
+
+== What you'll build
+
+You'll build an application simulate a Electronic Casino.
+
+
+== What you'll need
+
+*Java 1.8*
+
+*Maven/Gradle* 
+
+*RabbitMq*
+
+*Hibernate*
+
+*SpringData*
+
+*SpringBoot* 
+
+
+15 minutues of your appreciated time and be patient. Programming is not a game It is a fun way to pass your weekends :)
+
+== Install tools
+A Rabbitmq and H2 DB instance is needed to be able to test our **Spring boot main **project(In test folder we use qpid-broker in memory Server).
+
+== Install rabbitmq
+- Use this link to install rabbitmq. https://www.rabbitmq.com/install-windows.html.
+- rabbitmq-plugins.bat enable rabbitmq_management execute this command in rabbitmq console after the installation.
+- http://localhost:15672 type this link in your browser and then type the default password a credetion.(guest/guest)
+
+=== Using RabbitMq manager-> Configure an exchange with two queues as follow: 
+
+image::/images/rabbitmq_exchange_queues.PNG?raw=true[Rabbitmq exchange]
+ 
+=== In app main/test resources folder you can find Spring boot Configs to be able to connect to Rabbitmq, H2 and hibernate config:
+
+image::images/applicationconfig.png?raw=true[Spring boot main application.properties]
+
+
+
+
+
+
+
+
+
