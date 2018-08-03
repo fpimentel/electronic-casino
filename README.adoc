@@ -5,7 +5,7 @@ This guide walks you through the process of setting up all the necessary compone
 
 == What you'll build
 
-You'll build an application simulate a Electronic Casino.
+You'll build an application simulate a Electronic CASINO.
 
 
 == What you'll need
@@ -20,10 +20,12 @@ You'll build an application simulate a Electronic Casino.
 
 *SpringData*
 
-*SpringBoot* 
+*SpringBoot*
+ 
+*h2 Database*
 
 
-15 minutues of your appreciated time and be patient. Programming is not a game It is a fun way to pass your weekends :)
+15 minutes of your appreciated time and be patient. Programming is not a game It is a fun way to pass your weekends :)
 
 == Install tools
 A Rabbitmq and H2 DB instance is needed to be able to test our **Spring boot main **project(In test folder we use qpid-broker in memory Server).
@@ -31,7 +33,7 @@ A Rabbitmq and H2 DB instance is needed to be able to test our **Spring boot mai
 == Install rabbitmq
 - Use this link to install rabbitmq. https://www.rabbitmq.com/install-windows.html.
 - rabbitmq-plugins.bat enable rabbitmq_management execute this command in rabbitmq console after the installation.
-- http://localhost:15672 type this link in your browser and then type the default password a credetion.(guest/guest)
+- http://localhost:15672 type this link in your browser and then type the default user a credentials.(guest/guest)
 
 === Using RabbitMq manager-> Configure an exchange with two queues as follow: 
 
@@ -41,8 +43,11 @@ image::/images/rabbitmq_exchange_queues.PNG?raw=true[Rabbitmq exchange]
 
 image::images/applicationconfig.PNG?raw=true[Spring boot main application.properties]
 
+== Run App
 
+Runs your app as an SpringBoot app as the following image:
 
+image::images/sprigBoot_run_app.PNG?raw=true[Spring boot main application.properties]
 
 
 
