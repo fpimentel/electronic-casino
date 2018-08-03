@@ -41,16 +41,25 @@ image::/images/rabbitmq_exchange_queues.PNG?raw=true[Rabbitmq exchange]
  
 === In app main/test resources folder you can find Spring boot Configs to be able to connect to Rabbitmq, H2 and hibernate config:
 
-image::images/applicationconfig.PNG?raw=true[Spring boot main application.properties]
+image::images/applicationconfig.PNG?raw=true[application config]
 
 == Run App
 
 Runs your app as an SpringBoot app as the following image:
 
-image::images/sprigBoot_run_app.PNG?raw=true[Spring boot main application.properties]
+image::images/sprigBoot_run_app.PNG?raw=true[Spring boot run app]
 
+== Consume APIs.
 
+The controller has two APIs, use any tool as your preference, I'm using Postman. Below image of the request:
 
+*Establish game API*
+
+image::images/EstablishGameAPI.PNG?raw=true[Spring boot main EstablishGame]
+
+*Join to a game API*
+
+image::images/JoinGameAPI.PNG?raw=true[Spring boot main EstablishGame]
 
 
 
