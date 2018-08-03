@@ -20,6 +20,7 @@ public class EstablishAGameSubcriber {
 	
 	@RabbitListener(queues="${establish_new_game_queue.name}")
     public void recievedMessage(EstablishGameRequest establishGameRequest) {
+		System.out.println("EstablishGame message received for game: " + establishGameRequest.getGameType().name());
 		electronicCasinoService.establishNewGame(establishGameRequest);
     }
 }
