@@ -39,7 +39,7 @@ image::/images/rabbitmq_exchange_queues.PNG?raw=true[Rabbitmq exchange]
  
 === In app main/test resources folder you can find Spring boot Configs to be able to connect to Rabbitmq, H2 and hibernate config:
 
-image::images/applicationconfig.png?raw=true[Spring boot main application.properties]
+image::images/applicationconfig.PNG?raw=true[Spring boot main application.properties]
 
 
 
